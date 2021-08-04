@@ -1,5 +1,7 @@
 <template>
-    <a-layout-sider v-model:collapsed="collapsed" collapsible>
+    <a-layout-sider
+        :style="{ overflow: 'auto', height: '100vh', position: 'fixed' }"
+    >
         <img
             src="../../../assets/images/Genshin_Impact_logo.svg.png"
             alt="logo"

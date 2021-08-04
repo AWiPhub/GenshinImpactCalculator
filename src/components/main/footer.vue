@@ -23,4 +23,8 @@ export default defineComponent({
 span {
     margin-left: 5px;
 }
+.ant-layout-footer {
+    padding: 14px 50px;
+    background: #002140 !important;
+}
 </style>

@@ -1,9 +1,11 @@
 <template>
-    <Card
-        v-for="char in dbCharacters"
-        :key="char.key"
-        :char="char"
-    />
+    <a-row type="flex" justify="center">
+        <Card
+            v-for="char in dbCharacters"
+            :key="char.key"
+            :char="char"
+        />
+    </a-row>
 </template>
 
 <script lang="ts">
