@@ -1,13 +1,26 @@
 <template>
     <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
+        <a href="https://github.com/AWiPhub/GenshinImpactCalculator">
+            <Icon type="GithubOutlined" />
+            <span>GitHub</span>
+        </a>
     </a-layout-footer>
 </template>
 
 <script lang="ts">
+import Icon from "@/components/customComponents/icon.vue"
+
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    
+    components: {
+        Icon
+    }
 })
 </script>
+
+<style lang="scss" scoped>
+span {
+    margin-left: 5px;
+}
+</style>

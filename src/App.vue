@@ -2,8 +2,7 @@
   <a-layout style="min-height: 100vh">
     <Sider />
     <a-layout>
-      <Header />
-      <a-layout-content style="margin: 0 16px">
+      <a-layout-content style="margin: 16px">
         <router-view />
       </a-layout-content>
       <Footer />
@@ -12,8 +11,7 @@
 </template>
 
 <script lang="ts">
-import Sider from "./components/main/sider.vue"
-import Header from "./components/main/header.vue"
+import Sider from "./components/main/sider/sider.vue"
 import Footer from "./components/main/footer.vue"
 
 import {
@@ -23,7 +21,6 @@ import {
 export default defineComponent({
   components: {
     Sider,
-    Header,
     Footer,
   }
 })
