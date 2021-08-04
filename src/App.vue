@@ -1,30 +1,34 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <a-layout style="min-height: 100vh">
+    <Sider />
+    <a-layout>
+      <Header />
+      <a-layout-content style="margin: 0 16px">
+        <router-view />
+      </a-layout-content>
+      <Footer />
+    </a-layout>
+  </a-layout>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import Sider from "./components/main/sider.vue"
+import Header from "./components/main/header.vue"
+import Footer from "./components/main/footer.vue"
 
-#nav {
-  padding: 30px;
+import {
+  defineComponent,
+} from "vue";
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default defineComponent({
+  components: {
+    Sider,
+    Header,
+    Footer,
   }
-}
+})
+</script>
+
+<style lang="scss">
+
 </style>
