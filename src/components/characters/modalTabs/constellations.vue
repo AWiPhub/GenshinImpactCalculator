@@ -35,8 +35,6 @@ export default defineComponent({
         const selectedChar = computed(() => store.state.Modal.selectedChar);
         const constellations = computed(() => selectedChar.value.aboutCharTabs.constellations);
 
-        console.log(constellations);
-
         return {
             constellations,
         }
