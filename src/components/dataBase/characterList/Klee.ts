@@ -1,6 +1,4 @@
-import { ICharacter } from "@/components/interfaces/ICharacter";
-
-export const Klee: ICharacter = {
+export const Klee = {
     key: 7,
     name: "Кли",
     element: "Pyro",

@@ -1,6 +1,4 @@
-import { ICharacter } from "@/components/interfaces/ICharacter";
-
-export const Venti: ICharacter = {
+export const Venti = {
     key: 2,
     name: "Венти",
     element: "Anemo",

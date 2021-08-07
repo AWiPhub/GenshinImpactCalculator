@@ -20,9 +20,10 @@ const Modal: Module<State, RootState> = {
 
     actions: {
         showModal({ state, commit }, payload) {
-            console.log(payload);
-            
             state.selectedChar = payload;
+            commit("toggleModal");
+        },
+        closeModal({ commit }) {
             commit("toggleModal");
         }
     },

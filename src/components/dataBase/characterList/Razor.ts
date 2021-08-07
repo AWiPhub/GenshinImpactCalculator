@@ -1,6 +1,4 @@
-import { ICharacter } from "@/components/interfaces/ICharacter";
-
-export const Razor: ICharacter = {
+export const Razor = {
     key: 25,
     name: "Рэйзор",
     element: "Electro",

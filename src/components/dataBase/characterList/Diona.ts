@@ -1,6 +1,4 @@
-import { ICharacter } from "@/components/interfaces/ICharacter";
-
-export const Diona: ICharacter = {
+export const Diona = {
     key: 19,
     name: "Диона",
     element: "Cryo",
