@@ -3,7 +3,7 @@
         v-model:visible="visible"
         @ok="handleOk"
         centered
-        width="70%"
+        width="75%"
         wrapClassName="full-modal"
     >
         <a-tabs v-model:activeKey="activeTab" @change="getTabComponent(activeTab)">
@@ -12,7 +12,10 @@
                 :key="tab.key"
                 :tab="tab.tabName"
             >
-                <component :is="getTabComponent(tab.key)" />
+                <component
+                    :is="getTabComponent(tab.key)"
+                    :style="{ overflow: 'auto', maxHeight: '68vh' }"
+                />
             </a-tab-pane>
         </a-tabs>
         <template #footer>
@@ -97,7 +100,7 @@ export default defineComponent({
 }
 .full-modal {
   .ant-modal {
-    max-width: 80%;
+    max-width: 75%;
     top: 0;
     padding-bottom: 0;
     margin: 0;
@@ -106,6 +109,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     height: calc(85vh);
+    max-height: calc(85vh);
   }
   .ant-modal-body {
     flex: 1;
