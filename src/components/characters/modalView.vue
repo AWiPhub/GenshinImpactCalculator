@@ -1,8 +1,12 @@
 <template>
-    <a-modal v-model:visible="visible" title="Basic Modal" @ok="handleOk">
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+    <a-modal
+        v-model:visible="visible"
+        :title="charName"
+        @ok="handleOk"
+        centered
+        width="1000px"
+    >
+        
 
         <template #footer>
             <a-button key="back" @click="handleCancel">Закрыть</a-button>
@@ -21,16 +25,19 @@ import {
 export default defineComponent({
     setup() {
         const store = useStore();
-
+        const selectedChar = computed(() => store.state.Modal.selectedChar);
+        const charName = computed(() => selectedChar.value.name)
+        
         const visible = computed(() => store.state.Modal.visible);
 
         function handleCancel() {
-            store.dispatch("showModal");
+            store.dispatch("showModal", {});
         }
 
         return {
             visible,
-            handleCancel
+            handleCancel,
+            charName
         }
 
     }

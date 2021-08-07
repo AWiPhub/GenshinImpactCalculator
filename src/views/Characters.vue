@@ -6,7 +6,7 @@
             v-for="char in dbCharacters"
             :key="char.key"
             :char="char"
-            @click="showModal(char.key)"
+            @click="showModal(char)"
         />
     </a-row>
 </template>
@@ -19,6 +19,8 @@ import { characters } from "@/components/dataBase/characters"
 import ModalView from "@/components/characters/modalView.vue"
 // import Filters from "@/components/customComponents/filter/filters.vue"
 import Card from "@/components/cards/char.vue"
+
+import { ICharacter } from "@/components/interfaces/ICharacter"
 
 import {
     defineComponent,
@@ -34,8 +36,8 @@ export default defineComponent({
         const store = useStore();
         const dbCharacters = characters;
 
-        function showModal() {
-            store.dispatch("showModal")
+        function showModal(char: ICharacter) {
+            store.dispatch("showModal", char)
         }
 
         return {
