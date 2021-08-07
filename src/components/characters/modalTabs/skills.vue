@@ -3,7 +3,6 @@
         <a-descriptions-item
             v-for="(skill, index) in skills"
             :key="skill[index]"
-            :contentStyle="{  }"
         >
             <template #label>
                 <a-row type="flex" justify="center">
@@ -59,8 +58,6 @@ export default defineComponent({
         const selectedChar = computed(() => store.state.Modal.selectedChar);
         const charName = computed(() => selectedChar.value.name);
         const skills = computed(() => selectedChar.value.aboutCharTabs.skills);
-        
-        console.log(charName);
         
         function getSkillImg(charName: string, icon: string) {
             if (icon) return require(`../../../assets/images/skills/${charName}/${icon}.png`)
