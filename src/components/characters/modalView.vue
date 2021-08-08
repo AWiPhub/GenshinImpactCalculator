@@ -29,6 +29,7 @@ import overview from "./modalTabs/overview.vue"
 import skills from "./modalTabs/skills.vue"
 import constellations from "./modalTabs/constellations.vue"
 import ascension from "./modalTabs/ascension.vue"
+import basicCharacteristics from "./modalTabs/basicCharacteristics.vue"
 
 import { useStore } from "vuex";
 
@@ -44,7 +45,8 @@ export default defineComponent({
         overview,
         skills,
         constellations,
-        ascension
+        ascension,
+        basicCharacteristics
     },
     setup() {
         const store = useStore();
@@ -60,6 +62,7 @@ export default defineComponent({
             if (activeTab == "2") return "skills"
             if (activeTab == "3") return "constellations"
             if (activeTab == "4") return "ascension"
+            if (activeTab == "5") return "basicCharacteristics"
         }
         
         const visible = computed(() => store.state.Modal.visible);
@@ -68,7 +71,8 @@ export default defineComponent({
             { key: "1", tabName: "Обзор" },
             { key: "2", tabName: "Умения" },
             { key: "3", tabName: "Созвездия" },
-            { key: "4", tabName: "Возвышение" }
+            { key: "4", tabName: "Возвышение" },
+            { key: "5", tabName: "Базовые характеристики" },
         ]
 
         function handleCancel() {

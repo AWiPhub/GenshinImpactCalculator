@@ -25,6 +25,6 @@ export const siderMenu: any[] = [
         name: "Калькулятор",
         icon: "CalculatorOutlined",
         redirectTo: "/calc",
-        disabled: true
+        disabled: false
     }
 ]
