@@ -4,6 +4,7 @@
         :columns="columns"
         :pagination="false"
         :rowSpan="4"
+        size="small"
     >
         <template #standart="{ text }">
             <span>{{ text }}</span>

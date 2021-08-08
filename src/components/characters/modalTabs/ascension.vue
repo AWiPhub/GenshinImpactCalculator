@@ -3,6 +3,7 @@
         :dataSource="dataSource"
         :columns="columns"
         :pagination="false"
+        size="middle"
     >
         <template #standart="{ text }">
             <span>{{ text }}</span>
