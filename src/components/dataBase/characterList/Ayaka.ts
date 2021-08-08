@@ -1,5 +1,6 @@
 export const Ayaka = {
     key: 1,
+    IMGname: 'Kamisato Ayaka',
     name: 'Аяка',
     element: 'Cryo',
     stars: 5,

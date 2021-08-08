@@ -1,29 +1,25 @@
 <template>
     <a-row :gutter="[24,8]">
         <a-col
-            :span="6"
+            :span="10"
             :style="{ display: 'flex', justifyContent: 'center' }"
         >
             <img
-                :src="getAvatarPath(charName)"
-                :alt="charName"
+                :src="getWeaponPath(weaponNameImg)"
+                :alt="weaponNameImg"
                 class="charImgFullHeight"
             >
         </a-col>
-        <a-col :span="18">
+        <a-col :span="14">
             <a-divider>Общая информация</a-divider>
             <a-row type="flex" align="top" :gutter="[24,8]">
-                <a-col :span="5">
+                <a-col :span="4">
                     <a-row><span>Имя:</span></a-row>
-                    <a-row><span>День рождения:</span></a-row>
-                    <a-row><span>Элемент:</span></a-row>
-                    <a-row><span>Оружие:</span></a-row>
+                    <a-row><span>Тип:</span></a-row>
                     <a-row><span>Описание:</span></a-row>
                 </a-col>
-                <a-col :span="19">
+                <a-col :span="20">
                     <a-row><span>{{ overviewInfo.name }}</span></a-row>
-                    <a-row><span>{{ overviewInfo.birthday }}</span></a-row>
-                    <a-row><span>{{ overviewInfo.element }}</span></a-row>
                     <a-row><span>{{ overviewInfo.weapon }}</span></a-row>
                     <a-row><span class="overviewInfoDesc">{{ overviewInfo.desc }}</span></a-row>
                 </a-col>
@@ -50,30 +46,24 @@ import {
 export default defineComponent({
     setup() {
         const store = useStore();
-        const selectedChar = computed(() => store.state.Modal.selectedChar);
-        const charName = computed(() => selectedChar.value.IMGname);
-        const overviewInfo = computed(() => selectedChar.value.aboutCharTabs.overview);
+        const selectedWeapon = computed(() => store.state.Modal.selectedWeapon);
+        const weaponNameImg = computed(() => selectedWeapon.value.IMGname);
+        const overviewInfo = computed(() => selectedWeapon.value.aboutCharTabs.overview);
         
-        function getAvatarPath(charName: string) {
-            if (charName) return require(`../../../assets/images/charsFullHeight/${charName}.png`)
-            else return
-        }
-        function getElementPath(charElement: string) {
-            if (charElement) return require(`../../../assets/images/elements/${charElement}.png`)
+        function getWeaponPath(weaponNameImg: string) {
+            if (weaponNameImg) return require(`../../../assets/images/weaponsFull/${weaponNameImg}.png`)
             else return
         }
 
-        watch(selectedChar, (count, prevCount) => {
-            getAvatarPath(selectedChar.value.IMGname);
-            getElementPath(selectedChar.value.element);
+        watch(selectedWeapon, (count, prevCount) => {
+            getWeaponPath(selectedWeapon.value.IMGname);
         })
 
         return {
-            selectedChar,
-            charName,
+            selectedWeapon,
+            weaponNameImg,
             overviewInfo,
-            getAvatarPath,
-            getElementPath,
+            getWeaponPath,
         }
 
     }

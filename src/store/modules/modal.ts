@@ -3,13 +3,15 @@ import { RootState } from ".."
 
 export interface State {
     visible: boolean,
-    selectedChar: {}
+    selectedChar: {},
+    selectedWeapon: {}
 }
 
 const Modal: Module<State, RootState> = {
     state: {
         visible: false,
         selectedChar: {},
+        selectedWeapon: {},
     },
 
     mutations: {
@@ -20,7 +22,8 @@ const Modal: Module<State, RootState> = {
 
     actions: {
         showModal({ state, commit }, payload) {
-            state.selectedChar = payload;
+            if (payload.element) state.selectedChar = payload
+            else state.selectedWeapon = payload;
             commit("toggleModal");
         },
         closeModal({ commit }) {

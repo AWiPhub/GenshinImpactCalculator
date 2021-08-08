@@ -1,8 +1,7 @@
-export interface ICharacter {
+export interface IWeapon {
     key?: number;
     IMGname: string;
     name?: string;
-    element?: string;
     stars?: number;
     weapon?: string;
     aboutCharTabs?: []
